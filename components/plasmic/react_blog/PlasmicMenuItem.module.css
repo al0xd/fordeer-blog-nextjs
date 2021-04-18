@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  padding-left: 8px /* plasmic-token: qdlW4X37l */;
+  padding-right: 8px /* plasmic-token: qdlW4X37l */;
+  position: relative;
+}
+.slotChildren {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  color: #00000080;
+  line-height: 50px;
+  letter-spacing: 0em;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotChildren {
+    font-size: 13px;
+  }
+}
+.slotChildren__hover {
+  color: #000000eb;
+}

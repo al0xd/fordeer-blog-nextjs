@@ -1,0 +1,39 @@
+{
+  "props": [
+    {
+      "name": "m-auto",
+      "type": "spacing",
+      "value": "1px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "9NGHBNkQsbfExpj8Yvxqtb",
+        "id": "BdYm1DzVM"
+      }
+    },
+    {
+      "name": "p-16",
+      "type": "spacing",
+      "value": "16px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "9NGHBNkQsbfExpj8Yvxqtb",
+        "id": "3isCLhUoY"
+      }
+    },
+    {
+      "name": "px-8",
+      "type": "spacing",
+      "value": "8px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "9NGHBNkQsbfExpj8Yvxqtb",
+        "id": "qdlW4X37l"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}
