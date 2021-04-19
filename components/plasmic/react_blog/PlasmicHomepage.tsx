@@ -30,17 +30,12 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Header from "../../Header"; // plasmic-import: t7k9WefTZ_z/component
-import BlogItem from "../../BlogItem"; // plasmic-import: u8bhd43jsV/component
-
-import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: p9wv0BYsrZXV/globalVariant
+import Home from "../../Home"; // plasmic-import: kGJfhqxpGYq/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_react_blog.module.css"; // plasmic-import: 9NGHBNkQsbfExpj8Yvxqtb/projectcss
 import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: bizLmKQlykgG/css
-
-import Liogo1XsvgIcon from "./icons/PlasmicIcon__Liogo1Xsvg"; // plasmic-import: c_1pCl59N/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -54,14 +49,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  home?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  featurePost?: p.Flex<"div">;
-  featurePostImg?: p.Flex<"div">;
-  img?: p.Flex<"img">;
-  featurePostTitle?: p.Flex<"div">;
-  blogGridWrap?: p.Flex<"div">;
-  blogGrid?: p.Flex<"div">;
+  home?: p.Flex<typeof Home>;
 };
 
 export interface DefaultHomepageProps {
@@ -75,10 +63,6 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, args, overrides, forNode } = props;
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariants()
-  });
 
   return (
     <React.Fragment>
@@ -98,126 +82,11 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <p.Stack
-            as={"div"}
+          <Home
             data-plasmic-name={"home"}
             data-plasmic-override={overrides.home}
-            hasGap={
-              hasVariant(globalVariants, "screen", "mobileOnly") ? true : false
-            }
-            className={classNames(defaultcss.all, sty.home)}
-          >
-            <Header
-              data-plasmic-name={"header"}
-              data-plasmic-override={overrides.header}
-              className={classNames("__wab_instance", sty.header)}
-            />
-
-            {(
-              hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
-            ) ? (
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"featurePost"}
-                data-plasmic-override={overrides.featurePost}
-                hasGap={
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : false
-                }
-                className={classNames(defaultcss.all, sty.featurePost)}
-              >
-                <div
-                  data-plasmic-name={"featurePostImg"}
-                  data-plasmic-override={overrides.featurePostImg}
-                  className={classNames(defaultcss.all, sty.featurePostImg)}
-                >
-                  <img
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(defaultcss.img, sty.img)}
-                    role={"img"}
-                    src={
-                      "https://images.unsplash.com/photo-1562447141-5ab151b2638f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80" as const
-                    }
-                  />
-                </div>
-
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"featurePostTitle"}
-                  data-plasmic-override={overrides.featurePostTitle}
-                  hasGap={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? true
-                      : false
-                  }
-                  className={classNames(defaultcss.all, sty.featurePostTitle)}
-                >
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__efk5X
-                    )}
-                  >
-                    {"19 Realistic Habits To Improve Software Development"}
-                  </div>
-
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__qtQmh
-                    )}
-                  >
-                    {"Simple habits to be applied from minute zero"}
-                  </div>
-                </p.Stack>
-              </p.Stack>
-            ) : null}
-
-            <p.Stack
-              as={"div"}
-              data-plasmic-name={"blogGridWrap"}
-              data-plasmic-override={overrides.blogGridWrap}
-              hasGap={true}
-              className={classNames(defaultcss.all, sty.blogGridWrap)}
-            >
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"blogGrid"}
-                data-plasmic-override={overrides.blogGrid}
-                hasGap={true}
-                className={classNames(defaultcss.all, sty.blogGrid)}
-              >
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__mgcMs)}
-                />
-
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__cnds9)}
-                />
-
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__y90N)}
-                />
-
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__r7MsA)}
-                />
-
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__ob2Jr)}
-                />
-
-                <BlogItem
-                  className={classNames("__wab_instance", sty.blogItem__n0Wk8)}
-                />
-              </p.Stack>
-            </p.Stack>
-          </p.Stack>
+            className={classNames("__wab_instance", sty.home)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -225,34 +94,8 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "home",
-    "header",
-    "featurePost",
-    "featurePostImg",
-    "img",
-    "featurePostTitle",
-    "blogGridWrap",
-    "blogGrid"
-  ],
-  home: [
-    "home",
-    "header",
-    "featurePost",
-    "featurePostImg",
-    "img",
-    "featurePostTitle",
-    "blogGridWrap",
-    "blogGrid"
-  ],
-  header: ["header"],
-  featurePost: ["featurePost", "featurePostImg", "img", "featurePostTitle"],
-  featurePostImg: ["featurePostImg", "img"],
-  img: ["img"],
-  featurePostTitle: ["featurePostTitle"],
-  blogGridWrap: ["blogGridWrap", "blogGrid"],
-  blogGrid: ["blogGrid"]
+  root: ["root", "home"],
+  home: ["home"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<
@@ -260,14 +103,7 @@ type DescendantsType<
 > = typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  home: "div";
-  header: typeof Header;
-  featurePost: "div";
-  featurePostImg: "div";
-  img: "img";
-  featurePostTitle: "div";
-  blogGridWrap: "div";
-  blogGrid: "div";
+  home: typeof Home;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -326,13 +162,6 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     home: makeNodeComponent("home"),
-    header: makeNodeComponent("header"),
-    featurePost: makeNodeComponent("featurePost"),
-    featurePostImg: makeNodeComponent("featurePostImg"),
-    img: makeNodeComponent("img"),
-    featurePostTitle: makeNodeComponent("featurePostTitle"),
-    blogGridWrap: makeNodeComponent("blogGridWrap"),
-    blogGrid: makeNodeComponent("blogGrid"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
